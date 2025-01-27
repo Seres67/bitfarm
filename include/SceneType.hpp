@@ -1,0 +1,12 @@
+#ifndef STARDEW_BOY_SCENETYPE_HPP
+#define STARDEW_BOY_SCENETYPE_HPP
+
+enum class scene_type
+{
+    MAIN_MENU,
+    GAME,
+    SETTINGS,
+    CREDITS
+};
+
+#endif // !STARDEW_BOY_SCENETYPE_HPP

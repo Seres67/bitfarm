@@ -1,5 +1,5 @@
-#ifndef STARDEW_BOY_BF_SMALL_SPRITE_FONT_H
-#define STARDEW_BOY_BF_SMALL_SPRITE_FONT_H
+#ifndef STARDEW_BOY_SMALLSPRITEFONT_H
+#define STARDEW_BOY_SMALLSPRITEFONT_H
 
 #include <bn_sprite_font.h>
 #include <bn_sprite_items_small_font.h>
@@ -131,4 +131,4 @@ constexpr bn::sprite_font small_sprite_font(bn::sprite_items::small_font,
                                             small_sprite_font_utf8_characters_map.reference(),
                                             small_sprite_font_character_widths);
 
-#endif // !STARDEW_BOY_BF_SMALL_SPRITE_FONT_H
+#endif // !STARDEW_BOY_SMALLSPRITEFONT_H

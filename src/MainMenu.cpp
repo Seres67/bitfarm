@@ -1,4 +1,5 @@
 #include "MainMenu.hpp"
+#include "SceneType.hpp"
 #include <bn_assert.h>
 #include <bn_keypad.h>
 #include <bn_log.h>
@@ -14,14 +15,11 @@ MainMenu::MainMenu(bn::sprite_text_generator &small_text_generator)
     m_cursor_sprite.set_position(m_settings_text[0].x() - 28, m_play_text[0].y());
 }
 
-[[nodiscard]] bn::optional<scene_type> MainMenu::update()
-{
-    update_cursor();
-    return {};
-}
+[[nodiscard]] bn::optional<scene_type> MainMenu::update() { return update_cursor(); }
 
-void MainMenu::update_cursor()
+bn::optional<scene_type> MainMenu::update_cursor()
 {
+    bn::optional<scene_type> result;
     if (m_cursor_move) {
         /*BN_LOG("duration updates: ", m_cursor_move->duration_updates());*/
         m_cursor_move->update();
@@ -31,10 +29,13 @@ void MainMenu::update_cursor()
     } else {
         if (bn::keypad::a_pressed()) {
             if (m_menu_index == 0) { // PLAY
+                result = scene_type::GAME;
                 // TODO: change scene, run game
             } else if (m_menu_index == 1) { // SETTINGS
+                result = scene_type::SETTINGS;
                 // TODO: change scene, display settings
             } else if (m_menu_index == 2) { // CREDITS
+                result = scene_type::CREDITS;
             }
         } else if (bn::keypad::up_pressed() || bn::keypad::down_pressed()) {
             if (bn::keypad::up_pressed()) {
@@ -66,4 +67,5 @@ void MainMenu::update_cursor()
             }
         }
     }
+    return result;
 }

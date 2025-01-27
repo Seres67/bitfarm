@@ -2,11 +2,12 @@
 #define STARDEW_BOY_MAINMENU_HPP
 
 #include "Scene.hpp"
-#include "bn_vector.h"
+#include "SceneType.hpp"
 #include <bn_optional.h>
 #include <bn_sprite_actions.h>
 #include <bn_sprite_ptr.h>
 #include <bn_sprite_text_generator.h>
+#include <bn_vector.h>
 
 class MainMenu : public Scene
 {
@@ -19,7 +20,7 @@ class MainMenu : public Scene
     [[nodiscard]] bn::optional<scene_type> update() final;
 
   private:
-    void update_cursor();
+    bn::optional<scene_type> update_cursor();
 
     bn::sprite_ptr m_cursor_sprite;
     bn::optional<bn::sprite_move_to_action> m_cursor_move;

@@ -1,5 +1,5 @@
-#ifndef STARDEW_BOY_BF_BIG_SPRITE_FONT_H
-#define STARDEW_BOY_BF_BIG_SPRITE_FONT_H
+#ifndef STARDEW_BOY_BIGSPRITEFONT_H
+#define STARDEW_BOY_BIGSPRITEFONT_H
 
 #include <bn_sprite_font.h>
 #include <bn_sprite_items_big_font.h>
@@ -129,4 +129,4 @@ constexpr auto big_sprite_font_utf8_characters_map = bn::utf8_characters_map<big
 constexpr bn::sprite_font big_sprite_font(bn::sprite_items::big_font, big_sprite_font_utf8_characters_map.reference(),
                                           big_sprite_font_character_widths);
 
-#endif // !STARDEW_BOY_BF_BIG_SPRITE_FONT_H
+#endif // !STARDEW_BOY_BIGSPRITEFONT_H
